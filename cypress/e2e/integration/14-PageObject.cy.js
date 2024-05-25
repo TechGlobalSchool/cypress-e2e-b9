@@ -6,6 +6,14 @@ const loginPage = new LoginPage()
 describe("Login page test", () => {
   beforeEach(() => {
     cy.clickCard("Project - Login Function");
+
+    cy.fixture('example').then( function(data) {
+      this.username = data.username
+      this.password = data.password
+    })
+
+
+
   });
 
   // it("Login without POM", () => {
@@ -18,8 +26,9 @@ describe("Login page test", () => {
   //   cy.get("#success_lgn").should("be.visible");
   // });
 
-  it("Login with POM - Positive", () => {
-    loginPage.userLogin(Cypress.env("UI_USERNAME"), Cypress.env("UI_PASSWORD"))
+  it("Login with POM - Positive", function() {
+    // loginPage.userLogin(Cypress.env("UI_USERNAME"), Cypress.env("UI_PASSWORD"))
+    loginPage.userLogin(this.username, this.password)
     loginPage.getSuccessMessage().should('be.visible')
   });
 
