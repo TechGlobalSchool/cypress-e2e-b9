@@ -1,15 +1,15 @@
-describe("Handling iFrames", () => {
+describe('Handling iFrames', () => {
   beforeEach(() => {
-    cy.clickCard("Multiple Windows");
-  });
+    cy.clickCard('Multiple Windows')
+  })
 
-  it("iFrame", () => {
-    cy.get("#microsoft").should("have.attr", "target", "_blank");
+  it('iFrame', () => {
+    cy.get('#microsoft').should('have.attr', 'target', '_blank')
 
-    cy.get("#microsoft").invoke("removeAttr", "target").click();
+    cy.get('#microsoft').invoke('removeAttr', 'target').click()
 
-    cy.url().should("contains", "microsoft");
-  });
+    cy.url().should('contains', 'microsoft')
+  })
 
   /**
    * Go to https://techglobal-training.com/frontend/
@@ -32,4 +32,4 @@ describe("Handling iFrames", () => {
       cy.wrap(el.toLowerCase()).should('contain', 'techglobal')
     })
   })
-});
+})

@@ -1,12 +1,12 @@
 /// <reference types="cypress" />
 
-describe("Custom Commands", () => {
+describe('Custom Commands', () => {
   beforeEach(() => {
-    cy.clickCard("Html Elements");
-  });
+    cy.clickCard('Html Elements')
+  })
 
 
-  it("Parent Commands", () => {
+  it('Parent Commands', () => {
 
     /* Parent Commands */
     // cy.get()
@@ -16,10 +16,10 @@ describe("Custom Commands", () => {
     // cy.window()
     // cy.on()
 
-     cy.selectDropdownOption('#company_dropdown1', 'Apple')
+    cy.selectDropdownOption('#company_dropdown1', 'Apple')
 
-     cy.login('randomEmail@gmai.com', 'TechGlobal')
-  });
+    cy.login('randomEmail@gmai.com', 'TechGlobal')
+  })
 
   it('Child Command', () => {
 
@@ -54,4 +54,4 @@ describe("Custom Commands", () => {
     cy.visit('http://127.0.0.1:5500/myRandom.html')
   })
 
-});
+})

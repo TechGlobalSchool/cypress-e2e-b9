@@ -1,12 +1,12 @@
 /// <reference types="cypress" />
 
-describe("Debugging", () => {
+describe('Debugging', () => {
   beforeEach(() => {
-    cy.clickCard("Html Elements");
-  });
+    cy.clickCard('Html Elements')
+  })
 
 
-  it("cy.wait() - Hard Wait", () => {
+  it('cy.wait() - Hard Wait', () => {
 
     cy.get('#checkbox_1').check()
 
@@ -14,12 +14,12 @@ describe("Debugging", () => {
 
     cy.get('#checkbox_2').check()
 
-  });
+  })
 
-  it("cy.pause() - Debuggins use pause", () => {
-    cy.visit(`${Cypress.env('SITE_URL')}/frontend`);
+  it('cy.pause() - Debuggins use pause', () => {
+    cy.visit(`${Cypress.env('SITE_URL')}/frontend`)
 
-    cy.clickCard("Project - Login Function");
+    cy.clickCard('Project - Login Function')
 
     cy.get('#username').type(Cypress.env('UI_USERNAME'))
 
@@ -30,12 +30,12 @@ describe("Debugging", () => {
     cy.get('#login_btn').click()
 
     cy.get('#success_lgn').should('be.visible')
-  });
+  })
 
-  it.only("cy.debug() - Debuggins use debug", () => {
-    cy.visit(`${Cypress.env('SITE_URL')}/frontend`);
+  it.only('cy.debug() - Debuggins use debug', () => {
+    cy.visit(`${Cypress.env('SITE_URL')}/frontend`)
 
-    cy.clickCard("Project - Login Function");
+    cy.clickCard('Project - Login Function')
 
     cy.get('#username').type(Cypress.env('UI_USERNAME'))
 
@@ -49,8 +49,8 @@ describe("Debugging", () => {
 
     cy.debug()
 
-  });
+  })
 
 
 
-});
+})

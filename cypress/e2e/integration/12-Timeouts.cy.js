@@ -1,13 +1,13 @@
 /// <reference types="cypress" />
 
-describe("Timeouts", () => {
+describe('Timeouts', () => {
   beforeEach(() => {
     // cy.visit('www.google.com', { timeout: 100000, })
-    cy.clickCard("Html Elements");
-  });
+    cy.clickCard('Html Elements')
+  })
 
 
-  it("Explicit and Inline timeouts", () => {
+  it('Explicit and Inline timeouts', () => {
 
     cy.get('#main_heading', { timeout: 5000 })
 
@@ -16,11 +16,11 @@ describe("Timeouts", () => {
     cy.get('#checkbox-button-group input').click({ multiple: true, timeout: 10000 })
 
     // npx cypress run --config defaultCommandTimeout=10000
-  });
+  })
 
   it('Waits', () => {
-    cy.visit(`${Cypress.env('SITE_URL')}/frontend`);
-    cy.clickCard("Waits");
+    cy.visit(`${Cypress.env('SITE_URL')}/frontend`)
+    cy.clickCard('Waits')
 
     cy.get('#red').click()
 
@@ -29,4 +29,4 @@ describe("Timeouts", () => {
   })
 
 
-});
+})
