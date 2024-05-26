@@ -193,7 +193,6 @@ describe('Assertions', () => {
       const ele = $el.text()
       expect(ele).equal('Html Elements')
 
-      let myName = 'Mustafa'
       cy.wrap(ele).should('eq', 'Html Elements')
       cy.wrap(ele).should('includes', 'Html Elements')
 
@@ -237,7 +236,7 @@ describe('Assertions', () => {
       cy.wrap($el).should('have.text', arr2[index]).and('be.visible')
     })
 
-    const switch_case = 'empty'
+    // const switch_case = 'empty'
 
     // switch (switch_case) {
     //   case "non-empty": {
