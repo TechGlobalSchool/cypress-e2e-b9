@@ -3,7 +3,7 @@ import LoginPage from '../../pages/LoginPage'
 
 const loginPage = new LoginPage()
 
-describe("Login page test", () => {
+describe("Login page test", { tags: ['@regression'] }, () => {
   beforeEach(() => {
     cy.clickCard("Project - Login Function");
 
@@ -38,7 +38,7 @@ describe("Login page test", () => {
    * 3. Validate error message is "Invalid Username entered!"
    */
 
-  it("Login with POM - Negative", () => {
+  it("Login with POM - Negative", { tags: ['@smoke'] }, () => {
     loginPage.userLogin('WrongName', 'WrongPassword')
     loginPage.getErrorMessage().should('have.text', 'Invalid Username entered!')
   });

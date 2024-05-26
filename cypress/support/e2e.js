@@ -24,6 +24,8 @@ const { exec } = require('child_process');
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
+const registerCypressGrep = require('@cypress/grep')
+registerCypressGrep()
 
 // before(() => {
 //   exec('npm run build')
